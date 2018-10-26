@@ -1,9 +1,9 @@
-package com.giacomoparisi.kotlinfunctionalextensions.arrow
+package com.giacomoparisi.kotlin.functional.extensions.arrow
 
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
-import com.giacomoparisi.kotlinfunctionalextensions.core.ifTrue
+import com.giacomoparisi.kotlin.functional.extensions.core.ifTrue
 
 /**
  * Execute the $action function if the option value is Some.

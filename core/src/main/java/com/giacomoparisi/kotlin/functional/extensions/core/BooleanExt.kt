@@ -1,4 +1,4 @@
-package com.giacomoparisi.kotlinfunctionalextensions.core
+package com.giacomoparisi.kotlin.functional.extensions.core
 
 /**
  * Returns the T object of $ifTrue if the value is true.

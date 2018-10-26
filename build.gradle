@@ -9,7 +9,7 @@ buildscript {
     dependencies {
         classpath Libs.com_android_tools_build_gradle
         classpath Libs.kotlin_gradle_plugin
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath Libs.android_maven_gradle_plugin
     }
 }
 
