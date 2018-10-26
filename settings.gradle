@@ -1,1 +1,1 @@
-include ':app', ':arrow', ':core'
+include ':app', ':kotlin-functional-extensions-arrow', ':kotlin-functional-extensions-core'

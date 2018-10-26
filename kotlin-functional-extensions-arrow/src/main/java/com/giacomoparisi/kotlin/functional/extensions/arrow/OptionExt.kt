@@ -10,11 +10,13 @@ import com.giacomoparisi.kotlin.functional.extensions.core.ifTrue
  *
  * @author Giacomo Parisi
  * @param action The function to execute when the option value is Some
+ * @return The source option object
  */
-fun <T> Option<T>.ifSome(action: (T) -> Unit) {
+fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
     when (this) {
         is Some -> action(this.t)
     }
+    return this
 }
 
 /**
@@ -22,9 +24,11 @@ fun <T> Option<T>.ifSome(action: (T) -> Unit) {
  *
  * @author Giacomo Parisi
  * @param action The function to execute when the option value is None
+ * @return The source option object
  */
-fun <T> Option<T>.ifNone(action: () -> Unit) {
+fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
     this.isEmpty().ifTrue { action() }
+    return this
 }
 
 /**
@@ -34,12 +38,14 @@ fun <T> Option<T>.ifNone(action: () -> Unit) {
  * @author Giacomo Parisi
  * @param ifSome The function to execute when the option value is Some
  * @param ifNone The function to execute when the option value is None
+ * @return The source option object
  */
-fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit) {
+fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<T> {
     when (this) {
         is Some -> ifSome(this.t)
         is None -> ifNone()
     }
+    return this
 }
 
 /**

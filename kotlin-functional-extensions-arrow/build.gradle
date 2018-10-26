@@ -3,7 +3,7 @@ apply from: '../library.gradle'
 dependencies {
 
     //** MODULES **//
-    implementation project(':core')
+    implementation project(':kotlin-functional-extensions-core')
 
     //** ARROW **//
     implementation Libs.arrow_core

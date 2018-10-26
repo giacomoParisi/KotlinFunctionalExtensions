@@ -9,9 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/arrow" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/kotlin-functional-extensions-arrow" />
+            <option value="$PROJECT_DIR$/kotlin-functional-extensions-core" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
