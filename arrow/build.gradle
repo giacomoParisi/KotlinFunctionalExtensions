@@ -1,14 +1,9 @@
-apply plugin: 'java-library'
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-kapt'
+apply from: '../library.gradle'
 
 dependencies {
 
     //** MODULES **//
     implementation project(':core')
-
-    //** KOTLIN **//
-    implementation Libs.kotlin_stdlib_jdk7
 
     //** ARROW **//
     implementation Libs.arrow_core

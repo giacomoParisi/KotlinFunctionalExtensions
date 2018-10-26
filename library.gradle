@@ -1,0 +1,11 @@
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.giacomoParisi.KotlinFunctionalExtensions'
+apply plugin: 'java-library'
+
+dependencies {
+
+    //** KOTLIN **//
+    implementation Libs.kotlin_stdlib_jdk7
+}

@@ -32,6 +32,10 @@ object Versions {
      * [lint-gradle website](https://developer.android.com/studio) */
     const val lint_gradle: String = "26.2.1" // available milestone: "26.4.0-alpha02" 
 
+    /**
+     * [android-maven-gradle-plugin website](https://github.com/dcendents/android-maven-gradle-plugin) */
+    const val android_maven_gradle_plugin: String = "2.1" // up-to-date
+
     const val io_arrow_kt: String =
             "0.7.3" // No update information. Is this dependency available on jcenter or mavenCentral?
 
@@ -43,7 +47,7 @@ object Versions {
     const val junit: String = "4.12" // up-to-date
 
     /**
-     * [kotlin-gradle-plugin website](https://kotlinlang.org/) */
+     * [kotlin-annotation-processing-gradle website](https://kotlinlang.org/) */
     const val org_jetbrains_kotlin: String = "1.2.71" // available milestone: "1.3.0-rc-198" 
 
     /**

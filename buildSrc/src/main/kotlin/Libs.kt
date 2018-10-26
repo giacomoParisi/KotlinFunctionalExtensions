@@ -34,6 +34,11 @@ object Libs {
      * [lint-gradle website](https://developer.android.com/studio) */
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
 
+    /**
+     * [android-maven-gradle-plugin website](https://github.com/dcendents/android-maven-gradle-plugin) */
+    const val android_maven_gradle_plugin: String =
+            "com.github.dcendents:android-maven-gradle-plugin:" + Versions.android_maven_gradle_plugin
+
     const val arrow_annotations_processor: String =
             "io.arrow-kt:arrow-annotations-processor:" + Versions.io_arrow_kt
 
@@ -59,6 +64,11 @@ object Libs {
     /**
      * [junit website](http://junit.org) */
     const val junit: String = "junit:junit:" + Versions.junit
+
+    /**
+     * [kotlin-annotation-processing-gradle website](https://kotlinlang.org/) */
+    const val kotlin_annotation_processing_gradle: String =
+            "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:" + Versions.org_jetbrains_kotlin
 
     /**
      * [kotlin-gradle-plugin website](https://kotlinlang.org/) */
