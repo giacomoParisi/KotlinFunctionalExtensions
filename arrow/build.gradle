@@ -1,0 +1,24 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+
+    //** MODULES **//
+    implementation project(':core')
+
+    //** KOTLIN **//
+    implementation Libs.kotlin_stdlib_jdk7
+
+    //** ARROW **//
+    implementation Libs.arrow_core
+    implementation Libs.arrow_syntax
+    implementation Libs.arrow_typeclasses
+    implementation Libs.arrow_data
+    implementation Libs.arrow_instances_core
+    implementation Libs.arrow_instances_data
+    kapt Libs.arrow_annotations_processor
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
