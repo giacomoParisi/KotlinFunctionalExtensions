@@ -1,4 +1,2 @@
-apply from: '../library.gradle'
+apply from: '../library-kotlin.gradle'
 
-sourceCompatibility = "7"
-targetCompatibility = "7"

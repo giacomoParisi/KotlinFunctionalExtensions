@@ -8,18 +8,21 @@ import kotlin.String
  * to update this file */
 object Libs {
     /**
+     * [appcompat website](http://developer.android.com/tools/extras/support-library.html) */
+    const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+    /**
+     * [core website](http://developer.android.com/tools/extras/support-library.html) */
+    const val androidx_core_core: String = "androidx.core:core:" + Versions.androidx_core_core
+
+    /**
      * [espresso-core website](https://developer.android.com/testing) */
     const val espresso_core: String =
-            "com.android.support.test.espresso:espresso-core:" + Versions.espresso_core
+            "androidx.test.espresso:espresso-core:" + Versions.espresso_core
 
     /**
      * [runner website](https://developer.android.com/testing) */
-    const val com_android_support_test_runner: String =
-            "com.android.support.test:runner:" + Versions.com_android_support_test_runner
-
-    /**
-     * [appcompat-v7 website](http://developer.android.com/tools/extras/support-library.html) */
-    const val appcompat_v7: String = "com.android.support:appcompat-v7:" + Versions.appcompat_v7
+    const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test_runner
 
     /**
      * [aapt2 website](https://developer.android.com/studio) */

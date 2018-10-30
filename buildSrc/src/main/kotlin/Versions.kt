@@ -8,16 +8,20 @@ import kotlin.String
  * to update this file */
 object Versions {
     /**
+     * [appcompat website](http://developer.android.com/tools/extras/support-library.html) */
+    const val appcompat: String = "1.0.0" // up-to-date
+
+    /**
+     * [core website](http://developer.android.com/tools/extras/support-library.html) */
+    const val androidx_core_core: String = "1.0.0" // up-to-date
+
+    /**
      * [espresso-core website](https://developer.android.com/testing) */
-    const val espresso_core: String = "3.0.2" // up-to-date
+    const val espresso_core: String = "3.1.0" // up-to-date
 
     /**
      * [runner website](https://developer.android.com/testing) */
-    const val com_android_support_test_runner: String = "1.0.2" // up-to-date
-
-    /**
-     * [appcompat-v7 website](http://developer.android.com/tools/extras/support-library.html) */
-    const val appcompat_v7: String = "28.0.0" // up-to-date
+    const val androidx_test_runner: String = "1.1.0" // up-to-date
 
     /**
      * [aapt2 website](https://developer.android.com/studio) */
@@ -48,7 +52,7 @@ object Versions {
 
     /**
      * [kotlin-annotation-processing-gradle website](https://kotlinlang.org/) */
-    const val org_jetbrains_kotlin: String = "1.2.71" // available milestone: "1.3.0-rc-198" 
+    const val org_jetbrains_kotlin: String = "1.2.71" // available milestone: "1.3.0" 
 
     /**
      *
@@ -60,8 +64,8 @@ object Versions {
 
         const val currentVersion: String = "4.10.2"
 
-        const val nightlyVersion: String = "5.1-20181026000048+0000"
+        const val nightlyVersion: String = "5.1-20181030000041+0000"
 
-        const val releaseCandidate: String = ""
+        const val releaseCandidate: String = "5.0-rc-1"
     }
 }

@@ -1,4 +1,4 @@
-apply from: '../library.gradle'
+apply from: '../library-kotlin.gradle'
 
 dependencies {
 
@@ -15,5 +15,4 @@ dependencies {
     kapt Libs.arrow_annotations_processor
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+
