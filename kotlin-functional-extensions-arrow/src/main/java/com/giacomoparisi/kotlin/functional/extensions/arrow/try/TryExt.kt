@@ -1,4 +1,4 @@
-package com.giacomoparisi.kotlin.functional.extensions.arrow
+package com.giacomoparisi.kotlin.functional.extensions.arrow.`try`
 
 import arrow.core.Failure
 import arrow.core.Success

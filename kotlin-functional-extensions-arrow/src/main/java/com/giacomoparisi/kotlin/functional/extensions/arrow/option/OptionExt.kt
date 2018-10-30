@@ -1,4 +1,4 @@
-package com.giacomoparisi.kotlin.functional.extensions.arrow
+package com.giacomoparisi.kotlin.functional.extensions.arrow.option
 
 import arrow.core.None
 import arrow.core.Option

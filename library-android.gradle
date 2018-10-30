@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.giacomoParisi.KotlinFunctionalExtensions'
+apply from: '../library.gradle'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    //** ANDROID **//
+    implementation Libs.androidx_core_core
+
+    //** TEST **//
+    testImplementation Libs.junit
+    androidTestImplementation Libs.androidx_test_runner
+    androidTestImplementation Libs.espresso_core
+}
