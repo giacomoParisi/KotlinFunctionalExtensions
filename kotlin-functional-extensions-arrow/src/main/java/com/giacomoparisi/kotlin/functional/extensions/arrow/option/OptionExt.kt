@@ -3,6 +3,7 @@ package com.giacomoparisi.kotlin.functional.extensions.arrow.option
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
+import arrow.core.getOrElse
 import com.giacomoparisi.kotlin.functional.extensions.core.ifTrue
 
 /**
@@ -58,3 +59,23 @@ inline fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<
  */
 inline fun <T> Option<T>.foldToString(action: (T) -> String): String =
         this.fold({ "" }) { action(it) }
+
+/**
+ * Get the value if the option is Some
+ * Or throw the standard exception if is None
+ *
+ * @author Giacomo Parisi
+ * @return Return the some value of the option
+ */
+fun <T> Option<T>.getOrException(): T =
+        this.getOrElse { throw Throwable("The option value is empty") }
+
+/**
+ * Get the value if the option is Some
+ * Or throw a custom exception if is None
+ *
+ * @author Giacomo Parisi
+ * @return Return the some value of the option
+ */
+fun <T> Option<T>.getOrException(throwable: Throwable): T =
+        this.getOrElse { throw throwable }
