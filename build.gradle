@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.71'
 
     repositories {
         google()
@@ -11,12 +10,11 @@ buildscript {
         classpath Libs.com_android_tools_build_gradle
         classpath Libs.kotlin_gradle_plugin
         classpath Libs.android_maven_gradle_plugin
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 plugins {
-    id("jmfayard.github.io.gradle-kotlin-dsl-libs") version "0.2.5"
+    id("jmfayard.github.io.gradle-kotlin-dsl-libs") version "0.2.6"
 }
 
 allprojects {

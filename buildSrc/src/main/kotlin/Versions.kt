@@ -52,7 +52,7 @@ object Versions {
 
     /**
      * [kotlin-annotation-processing-gradle website](https://kotlinlang.org/) */
-    const val org_jetbrains_kotlin: String = "1.2.71" // available milestone: "1.3.0" 
+    const val org_jetbrains_kotlin: String = "1.3.0" // available milestone: "1.3.0"
 
     /**
      *
