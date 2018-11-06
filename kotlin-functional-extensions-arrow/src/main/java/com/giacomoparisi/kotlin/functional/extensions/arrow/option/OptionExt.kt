@@ -12,7 +12,7 @@ import com.giacomoparisi.kotlin.functional.extensions.core.ifTrue
  * @param action The function to execute when the option value is Some
  * @return The source option object
  */
-fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
+inline fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
     when (this) {
         is Some -> action(this.t)
     }
@@ -26,7 +26,7 @@ fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
  * @param action The function to execute when the option value is None
  * @return The source option object
  */
-fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
+inline fun <T> Option<T>.ifNone(crossinline action: () -> Unit): Option<T> {
     this.isEmpty().ifTrue { action() }
     return this
 }
@@ -40,7 +40,7 @@ fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
  * @param ifNone The function to execute when the option value is None
  * @return The source option object
  */
-fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<T> {
+inline fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<T> {
     when (this) {
         is Some -> ifSome(this.t)
         is None -> ifNone()
@@ -56,5 +56,5 @@ fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<T> {
  * @param action The function to execute when the option value is Some
  * @return Return the string folded value
  */
-fun <T> Option<T>.foldToString(action: (T) -> String): String =
+inline fun <T> Option<T>.foldToString(action: (T) -> String): String =
         this.fold({ "" }) { action(it) }
