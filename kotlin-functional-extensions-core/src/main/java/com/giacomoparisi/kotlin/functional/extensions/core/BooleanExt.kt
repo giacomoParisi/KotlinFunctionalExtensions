@@ -21,7 +21,7 @@ fun <T> Boolean.fold(ifFalse: T, ifTrue: T): T =
  * @param ifFalse The function that return the T object when the value is false
  * @return The correct T object based on the value
  */
-fun <T> Boolean.fold(ifFalse: () -> T, ifTrue: () -> T): T =
+inline fun <T> Boolean.fold(ifFalse: () -> T, ifTrue: () -> T): T =
         if (this) ifTrue() else ifFalse()
 
 /**
@@ -31,7 +31,7 @@ fun <T> Boolean.fold(ifFalse: () -> T, ifTrue: () -> T): T =
  * @param action The function to execute when the value is true
  * @return The source boolean value
  */
-fun Boolean.ifTrue(action: () -> Unit): Boolean {
+inline fun Boolean.ifTrue(action: () -> Unit): Boolean {
     if (this) action()
     return this
 }
@@ -43,7 +43,7 @@ fun Boolean.ifTrue(action: () -> Unit): Boolean {
  * @param action The function to execute when the value is false
  * @return The source boolean value
  */
-fun Boolean.ifFalse(action: () -> Unit): Boolean {
+inline fun Boolean.ifFalse(action: () -> Unit): Boolean {
     if (!this) action()
     return this
 }

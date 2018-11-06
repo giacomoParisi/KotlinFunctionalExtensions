@@ -26,7 +26,7 @@ inline fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
  * @param action The function to execute when the option value is None
  * @return The source option object
  */
-inline fun <T> Option<T>.ifNone(crossinline action: () -> Unit): Option<T> {
+inline fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
     this.isEmpty().ifTrue { action() }
     return this
 }

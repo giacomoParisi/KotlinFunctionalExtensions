@@ -11,7 +11,7 @@ import arrow.core.Try
  * @param action The function to execute when the try value is Success
  * @return The source try object
  */
-fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> {
+inline fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> {
     when (this) {
         is Success -> action(this.value)
     }
@@ -25,7 +25,7 @@ fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> {
  * @param action The function to execute when the try value is Failure
  * @return The source try object
  */
-fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> {
+inline fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> {
     when (this) {
         is Failure -> action(this.exception)
     }
@@ -41,7 +41,7 @@ fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> {
  * @param ifFailure The function to execute when the try value is Failure
  * @return The source try object
  */
-fun <T> Try<T>.Match(ifSuccess: (T) -> Unit, ifFailure: (throwable: Throwable) -> Unit): Try<T> {
+inline fun <T> Try<T>.Match(ifSuccess: (T) -> Unit, ifFailure: (throwable: Throwable) -> Unit): Try<T> {
     when (this) {
         is Success -> ifSuccess(this.value)
         is Failure -> ifFailure(this.exception)
@@ -57,5 +57,5 @@ fun <T> Try<T>.Match(ifSuccess: (T) -> Unit, ifFailure: (throwable: Throwable) -
  * @param action The function to execute when the try value is Success
  * @return Return the string folded value
  */
-fun <T> Try<T>.foldToMessage(action: (T) -> String): String =
+inline fun <T> Try<T>.foldToMessage(action: (T) -> String): String =
         this.fold({ it.message.orEmpty() }) { action(it) }
