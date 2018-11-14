@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/kotlin-functional-extensions-android" />
             <option value="$PROJECT_DIR$/kotlin-functional-extensions-arrow" />
             <option value="$PROJECT_DIR$/kotlin-functional-extensions-core" />
+            <option value="$PROJECT_DIR$/kotlin-functional-extensions-coroutines" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

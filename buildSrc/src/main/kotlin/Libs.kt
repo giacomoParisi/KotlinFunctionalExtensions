@@ -87,4 +87,9 @@ object Libs {
      * [kotlin-stdlib-jdk7 website](https://kotlinlang.org/) */
     const val kotlin_stdlib_jdk7: String =
             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + Versions.org_jetbrains_kotlin
+
+    /**
+     * [kotlinx-coroutines-core website](https://github.com/Kotlin/kotlinx.coroutines) */
+    const val kotlinx_coroutines_core: String =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:" + Versions.kotlinx_coroutines_core
 }
