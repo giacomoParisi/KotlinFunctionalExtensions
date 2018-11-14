@@ -8,10 +8,6 @@ import kotlin.String
  * to update this file */
 object Libs {
     /**
-     * [appcompat website](http://developer.android.com/tools/extras/support-library.html) */
-    const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
-
-    /**
      * [core website](http://developer.android.com/tools/extras/support-library.html) */
     const val androidx_core_core: String = "androidx.core:core:" + Versions.androidx_core_core
 
