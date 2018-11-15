@@ -33,23 +33,6 @@ inline fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> 
 }
 
 /**
- * Execute the $ifSuccess function if the try value is Success.
- * Otherwise execute the $ifFailure function.
- *
- * @author Giacomo Parisi
- * @param ifSuccess The function to execute when the try value is Success
- * @param ifFailure The function to execute when the try value is Failure
- * @return The source try object
- */
-inline fun <T> Try<T>.Match(ifSuccess: (T) -> Unit, ifFailure: (throwable: Throwable) -> Unit): Try<T> {
-    when (this) {
-        is Success -> ifSuccess(this.value)
-        is Failure -> ifFailure(this.exception)
-    }
-    return this
-}
-
-/**
  * Fold the try and return a string, using the $action if the try is Success
  * Or the message of the throwable if the try is Failure
  *

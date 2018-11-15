@@ -33,23 +33,6 @@ inline fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
 }
 
 /**
- * Execute the $ifSome function if the option value is Some.
- * Otherwise execute the $ifNone function.
- *
- * @author Giacomo Parisi
- * @param ifSome The function to execute when the option value is Some
- * @param ifNone The function to execute when the option value is None
- * @return The source option object
- */
-inline fun <T> Option<T>.Match(ifSome: (T) -> Unit, ifNone: () -> Unit): Option<T> {
-    when (this) {
-        is Some -> ifSome(this.t)
-        is None -> ifNone()
-    }
-    return this
-}
-
-/**
  * Fold the option and return a string, using the $action if the option is Some
  * Or empty string if the option is None
  *
