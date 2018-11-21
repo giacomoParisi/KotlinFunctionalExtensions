@@ -11,12 +11,12 @@ import arrow.core.Try
  * @param action The function to execute when the try value is Success
  * @return The source try object
  */
-inline fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> {
-    when (this) {
-        is Success -> action(this.value)
-    }
-    return this
-}
+inline fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> =
+        this.also {
+            when (it) {
+                is Success -> action(it.value)
+            }
+        }
 
 /**
  * Execute the $action function if the try value is Failure.
@@ -25,12 +25,12 @@ inline fun <T> Try<T>.ifSuccess(action: (T) -> Unit): Try<T> {
  * @param action The function to execute when the try value is Failure
  * @return The source try object
  */
-inline fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> {
-    when (this) {
-        is Failure -> action(this.exception)
-    }
-    return this
-}
+inline fun <T> Try<T>.ifFailure(action: (throwable: Throwable) -> Unit): Try<T> =
+        this.also {
+            when (it) {
+                is Failure -> action(it.exception)
+            }
+        }
 
 /**
  * Fold the try and return a string, using the $action if the try is Success

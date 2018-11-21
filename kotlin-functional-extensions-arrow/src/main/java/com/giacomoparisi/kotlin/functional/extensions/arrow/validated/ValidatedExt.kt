@@ -9,12 +9,12 @@ import arrow.data.Validated
  * @param action The function to execute when the validated object is Valid
  * @return The source validated object
  */
-inline fun <E, T> Validated<E, T>.ifValid(action: (T) -> Unit): Validated<E, T> {
-    when (this) {
-        is Validated.Valid -> action(this.a)
-    }
-    return this
-}
+inline fun <E, T> Validated<E, T>.ifValid(action: (T) -> Unit): Validated<E, T> =
+        this.also {
+            when (it) {
+                is Validated.Valid -> action(it.a)
+            }
+        }
 
 /**
  * Execute the $action function if the validated object is Valid.
@@ -23,9 +23,9 @@ inline fun <E, T> Validated<E, T>.ifValid(action: (T) -> Unit): Validated<E, T> 
  * @param action The function to execute when the validated object is Valid
  * @return The source validated object
  */
-inline fun <E, T> Validated<E, T>.ifInvalid(action: (E) -> Unit): Validated<E, T> {
-    when (this) {
-        is Validated.Invalid -> action(this.e)
-    }
-    return this
-}
+inline fun <E, T> Validated<E, T>.ifInvalid(action: (E) -> Unit): Validated<E, T> =
+        this.also {
+            when (it) {
+                is Validated.Invalid -> action(it.e)
+            }
+        }

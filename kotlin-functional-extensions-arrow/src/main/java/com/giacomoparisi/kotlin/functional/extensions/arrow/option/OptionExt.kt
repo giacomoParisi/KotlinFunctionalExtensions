@@ -1,6 +1,5 @@
 package com.giacomoparisi.kotlin.functional.extensions.arrow.option
 
-import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
 import arrow.core.getOrElse
@@ -13,12 +12,12 @@ import com.giacomoparisi.kotlin.functional.extensions.core.ifTrue
  * @param action The function to execute when the option value is Some
  * @return The source option object
  */
-inline fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
-    when (this) {
-        is Some -> action(this.t)
-    }
-    return this
-}
+inline fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> =
+        this.also {
+            when (it) {
+                is Some -> action(it.t)
+            }
+        }
 
 /**
  * Execute the $action function if the option value is None.
@@ -27,10 +26,8 @@ inline fun <T> Option<T>.ifSome(action: (T) -> Unit): Option<T> {
  * @param action The function to execute when the option value is None
  * @return The source option object
  */
-inline fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> {
-    this.isEmpty().ifTrue { action() }
-    return this
-}
+inline fun <T> Option<T>.ifNone(action: () -> Unit): Option<T> =
+        this.also { it.isEmpty().ifTrue { action() } }
 
 /**
  * Fold the option and return a string, using the $action if the option is Some
