@@ -37,8 +37,7 @@ captures/
 
 # Intellij
 *.iml
-.idea/
-.idea/*
+/.idea/*
 projectFilesBackup/*
 .DS_Store
 
