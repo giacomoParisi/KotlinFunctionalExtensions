@@ -15,4 +15,6 @@ dependencies {
     kapt Libs.arrow_annotations_processor
 }
 
+apply from: rootProject.file('release-bintray.gradle')
+
 

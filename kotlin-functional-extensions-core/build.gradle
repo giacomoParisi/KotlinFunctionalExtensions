@@ -1,2 +1,2 @@
 apply from: '../library-kotlin.gradle'
-
+apply from: rootProject.file('release-bintray.gradle')

@@ -1,1 +1,2 @@
 apply from: '../library-android.gradle'
+apply from: rootProject.file('release-bintray.gradle')
