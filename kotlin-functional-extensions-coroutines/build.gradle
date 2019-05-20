@@ -1,6 +1,0 @@
-apply from: '../library-kotlin.gradle'
-
-dependencies {
-    Libs.kotlin_stdlib_jdk7
-    implementation Libs.kotlinx_coroutines_core
-}
