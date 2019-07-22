@@ -35,24 +35,16 @@ object Libs {
     const val gradle_bintray_plugin: String =
             "com.jfrog.bintray.gradle:gradle-bintray-plugin:" + Versions.gradle_bintray_plugin
 
-    const val arrow_annotations_processor: String =
-            "io.arrow-kt:arrow-annotations-processor:" + Versions.io_arrow_kt
+    const val arrow_core_data: String = "io.arrow-kt:arrow-core-data:" + Versions.io_arrow_kt
 
-    const val arrow_core: String = "io.arrow-kt:arrow-core:" + Versions.io_arrow_kt
+    const val arrow_core_extensions: String =
+            "io.arrow-kt:arrow-core-extensions:" + Versions.io_arrow_kt
 
-    const val arrow_data: String = "io.arrow-kt:arrow-data:" + Versions.io_arrow_kt
+    const val arrow_extras_data: String = "io.arrow-kt:arrow-extras-data:" + Versions.io_arrow_kt
 
-    const val arrow_instances_core: String =
-            "io.arrow-kt:arrow-instances-core:" + Versions.io_arrow_kt
-
-    const val arrow_instances_data: String =
-            "io.arrow-kt:arrow-instances-data:" + Versions.io_arrow_kt
+    const val arrow_meta: String = "io.arrow-kt:arrow-meta:" + Versions.io_arrow_kt
 
     const val arrow_syntax: String = "io.arrow-kt:arrow-syntax:" + Versions.io_arrow_kt
-
-    /**
-     * [arrow-typeclasses website](https://github.com/arrow-kt/arrow/) */
-    const val arrow_typeclasses: String = "io.arrow-kt:arrow-typeclasses:" + Versions.io_arrow_kt
 
     const val jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin: String =
             "jmfayard.github.io.gradle-kotlin-dsl-libs:jmfayard.github.io.gradle-kotlin-dsl-libs.gradle.plugin:" + Versions.jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin
