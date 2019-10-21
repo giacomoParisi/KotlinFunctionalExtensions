@@ -1,6 +1,6 @@
 package com.giacomoparisi.kotlin.functional.extensions.arrow.validated
 
-import arrow.data.Validated
+import arrow.core.Validated
 
 /**
  * Execute the $action function if the validated object is Valid.

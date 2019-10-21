@@ -41,6 +41,17 @@ inline fun <T> Option<T>.foldToString(action: (T) -> String): String =
         this.fold({ "" }) { action(it) }
 
 /**
+ * Fold the option to a value, using the value if the option is Some
+ * Or empty value if the option is None
+ *
+ * @author Giacomo Parisi
+ * @param value The function to execute when the option value is Some
+ * @return Return the folded value
+ */
+inline fun <A, T> Option<T>.fold(empty: A, value: (T) -> A): A =
+        this.fold({ empty }) { value(it) }
+
+/**
  * Get the value if the option is Some
  * Or throw the standard exception if is None
  *

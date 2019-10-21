@@ -1,6 +1,9 @@
 package com.giacomoparisi.kotlin.functional.extensions.arrow.either
 
 import arrow.core.Either
+import arrow.core.Option
+import arrow.core.orNull
+import arrow.core.toOption
 
 /**
  * Execute the $action function if the either value is Left.
@@ -30,3 +33,13 @@ inline fun <T, A> Either<T, A>.ifRight(action: (value: A) -> Unit): Either<T, A>
                 is Either.Right -> action(it.b)
             }
         }
+
+/**
+ * Mapping the either value to option:
+ * - Failure to None
+ * - Success to Some
+ *
+ * @author Giacomo Parisi
+ * @return The option value
+ */
+fun <T, A> Either<T, A>.failureToNone(): Option<A> = this.orNull().toOption()
