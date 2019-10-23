@@ -48,7 +48,7 @@ fun <T, A> Either<T, A>.failureToNone(): Option<A> = this.orNull().toOption()
  * @author Giacomo Parisi
  * @return The either value that wrap the return type of f
  */
-inline fun <T> catch(f: () -> T): Either<Throwable, T> =
+inline fun <T> catchEither(f: () -> T): Either<Throwable, T> =
         try {
             f().right()
         } catch (throwable: Throwable) {
