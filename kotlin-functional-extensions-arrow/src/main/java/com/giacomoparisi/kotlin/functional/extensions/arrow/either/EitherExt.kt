@@ -1,9 +1,6 @@
 package com.giacomoparisi.kotlin.functional.extensions.arrow.either
 
-import arrow.core.Either
-import arrow.core.Option
-import arrow.core.orNull
-import arrow.core.toOption
+import arrow.core.*
 
 /**
  * Execute the $action function if the either value is Left.
@@ -43,3 +40,17 @@ inline fun <T, A> Either<T, A>.ifRight(action: (value: A) -> Unit): Either<T, A>
  * @return The option value
  */
 fun <T, A> Either<T, A>.failureToNone(): Option<A> = this.orNull().toOption()
+
+/**
+ * Execute the f function and return a Left value if f throw an exception
+ * or Right if f return without errors
+ *
+ * @author Giacomo Parisi
+ * @return The either value that wrap the return type of f
+ */
+inline fun <T> catch(f: () -> T): Either<Throwable, T> =
+        try {
+            f().right()
+        } catch (throwable: Throwable) {
+            throwable.left()
+        }
