@@ -85,6 +85,11 @@ object Libs {
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
 
     /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+    /**
      * https://developer.android.com/studio
      */
     const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2

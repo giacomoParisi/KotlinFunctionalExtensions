@@ -33,6 +33,8 @@ object Versions {
 
     const val lint_gradle: String = "26.5.1"
 
+    const val appcompat: String = "1.1.0"
+
     const val aapt2: String = "3.5.1-5435860"
 
     const val junit: String = "4.12"

@@ -26,6 +26,7 @@ dependencies {
 
     //** ANDROID **//
     implementation Libs.androidx_core_core
+    implementation Libs.appcompat
 
     //** TEST **//
     testImplementation Libs.junit
