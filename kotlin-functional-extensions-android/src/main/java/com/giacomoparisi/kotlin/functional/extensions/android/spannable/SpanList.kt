@@ -1,15 +1,14 @@
 package com.giacomoparisi.kotlin.functional.extensions.android.spannable
 
 import android.content.Context
+import android.graphics.Typeface
 import android.text.TextPaint
 import android.text.style.*
 import android.view.View
-import androidx.annotation.ColorRes
-import androidx.annotation.DimenRes
-import androidx.annotation.DrawableRes
-import androidx.annotation.StyleRes
+import androidx.annotation.*
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 
 /**
  * Class that represent a list of spans
@@ -70,10 +69,11 @@ class SpanList(private val context: Context) : Iterable<Any> {
     fun typeface(family: String) = spans.add(TypefaceSpan(family))
 
     /**
-     * Add a StyleSpan to this SpanList instance
-     * @param style The text style to apply
+     * Add a TypefaceSpan to this SpanList instance
+     * @param fontId The id of the font res to apply
      */
-    fun typeface(style: Int) = spans.add(StyleSpan(style))
+    fun typeface(@FontRes fontId: Int) =
+            spans.add(CustomTypefaceSpan(ResourcesCompat.getFont(context, fontId)))
 
     /**
      * Add a ClickableSpan to this SpanList instance
@@ -111,3 +111,16 @@ fun clickableSpan(action: () -> Unit) = object : ClickableSpan() {
  */
 fun spanList(context: Context, builder: SpanList.() -> Unit) =
         SpanList(context).apply(builder)
+
+/**
+ * Class that allow the utilization of custom font res
+ */
+class CustomTypefaceSpan(private val typeface: Typeface?) : MetricAffectingSpan() {
+    override fun updateDrawState(paint: TextPaint) {
+        paint.typeface = typeface
+    }
+
+    override fun updateMeasureState(paint: TextPaint) {
+        paint.typeface = typeface
+    }
+}
